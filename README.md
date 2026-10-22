@@ -79,12 +79,18 @@ TravelExplorer/
   </tr>
 </table>
 
-## Future Improvements
+
+
+## 🚀 Future Improvements
+
+These optional extension features are not implemented yet and are planned for future versions:
+
+- **Smart Destination Matcher:** Suggest destinations based on the user's preferences, such as travel type (beach, mountains, heritage), budget, and trip duration.
+- **Live Weather Integration:** Fetch and display the current temperature and weather conditions for each destination using a free weather API.
 
 - Split `App.js` into separate screens and reusable components
 - Add more destinations and photos
 - Add React Navigation for smoother screen transitions
-
 - Add a dark mode
 
 ## Author

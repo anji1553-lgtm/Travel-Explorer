@@ -525,51 +525,51 @@ export default function App() {
           ))}
         </ScrollView>
       </View>
-   <View style={styles.filterActions}>
-  <TouchableOpacity
-    style={[
-      styles.wishlistButton,
-    ]}
-    onPress={() => setShowWishlist(true)}
-  >
-    <Text style={styles.wishlistText}>
-      {`❤️ My Wishlist (${favorites.length})`}
-    </Text>
-  </TouchableOpacity>
+      <View style={styles.filterActions}>
+        <TouchableOpacity
+          style={[
+            styles.wishlistButton,
+          ]}
+          onPress={() => setShowWishlist(true)}
+        >
+          <Text style={styles.wishlistText}>
+            {`❤️ My Wishlist (${favorites.length})`}
+          </Text>
+        </TouchableOpacity>
 
-  <TouchableOpacity
-    style={styles.clearButton}
-    onPress={clearAllFilters}
-  >
-    <Text style={styles.clearButtonText}>
-      ✕ Clear
-    </Text>
-  </TouchableOpacity>
-</View>
+        <TouchableOpacity
+          style={styles.clearButton}
+          onPress={clearAllFilters}
+        >
+          <Text style={styles.clearButtonText}>
+            ✕ Clear
+          </Text>
+        </TouchableOpacity>
+      </View>
 
       {/* Trip Planner Button */}
       <View style={styles.tripButtonsContainer}>
-  <TouchableOpacity
-    style={styles.tripPlannerButton}
-    onPress={() => setShowTripPlanner(true)}
-  >
-    <Text style={styles.tripPlannerButtonText}>
-      📅  Trip Planner
-    </Text>
-  </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tripPlannerButton}
+          onPress={() => setShowTripPlanner(true)}
+        >
+          <Text style={styles.tripPlannerButtonText}>
+            📅  Trip Planner
+          </Text>
+        </TouchableOpacity>
 
-  <TouchableOpacity
-    style={styles.tripPlannerButton}
-    onPress={async () => {
-      await loadSavedTrips();
-      setShowSavedTrips(true);
-    }}
-  >
-    <Text style={styles.tripPlannerButtonText}>
-      🧳  My Saved Trips
-    </Text>
-  </TouchableOpacity>
-</View>
+        <TouchableOpacity
+          style={styles.tripPlannerButton}
+          onPress={async () => {
+            await loadSavedTrips();
+            setShowSavedTrips(true);
+          }}
+        >
+          <Text style={styles.tripPlannerButtonText}>
+            🧳  My Saved Trips
+          </Text>
+        </TouchableOpacity>
+      </View>
 
 
       <ScrollView showsVerticalScrollIndicator={false}>
