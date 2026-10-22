@@ -71,9 +71,9 @@ TravelExplorer/
 
 ## Screenshots
 
-_Add screenshots of the home screen, details screen and trip planner here._
-
-<!-- ![Home](assets/screenshots/home.png) -->
+![alt text](Home_screen.png)
+![alt text](destination_card.png)
+![alt text](Trip_planner.png)
 
 ## Future Improvements
 
