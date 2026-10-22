@@ -71,8 +71,11 @@ TravelExplorer/
 
 ## Screenshots
 
+Homescreen
 ![alt text](Home_screen.png)
+Destination card
 ![alt text](destination_card.png)
+Trip Planner
 ![alt text](Trip_planner.png)
 
 ## Future Improvements
