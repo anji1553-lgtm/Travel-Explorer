@@ -335,6 +335,69 @@ tripButtonsContainer: {
   gap: 10,
   marginBottom: 16,
 },
+attractionCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 8,
+    marginBottom: 10,
+    elevation: 2,
+  },
+  attractionImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 10,
+  },
+  attractionPlaceholder: {
+    width: 70,
+    height: 70,
+    borderRadius: 10,
+    backgroundColor: '#CCFBF1',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  attractionPlaceholderText: {
+    fontSize: 26,
+  },
+  attractionName: {
+    flex: 1,
+    marginLeft: 12,
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#134E4A',
+  },
+  wishlistCard: {
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 14,
+    padding: 10,
+    marginTop: 14,
+    elevation: 3,
+  },
+  wishlistImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 12,
+  },
+  wishlistInfo: {
+    flex: 1,
+    marginLeft: 12,
+    justifyContent: 'center',
+  },
+  wishlistRemoveButton: {
+    marginTop: 8,
+    alignSelf: 'flex-start',
+    backgroundColor: '#FCE7F3',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 10,
+  },
+  wishlistRemoveText: {
+    color: '#BE185D',
+    fontWeight: '600',
+  },
+ 
 
 });
 

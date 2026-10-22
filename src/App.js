@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { places, categories } from './data';
 import styles from './styles';
@@ -24,6 +23,7 @@ export default function App() {
   const [favorites, setFavorites] = useState([]);
   const [favoritesLoaded, setFavoritesLoaded] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [showWishlist, setShowWishlist] = useState(false);
   const [showTripPlanner, setShowTripPlanner] = useState(false);
   const [showSavedTrips, setShowSavedTrips] = useState(false);
   const [savedTrips, setSavedTrips] = useState([]);
@@ -246,11 +246,30 @@ export default function App() {
               Popular Attractions
             </Text>
 
-            {selectedPlace.attractions.map((attraction) => (
-              <Text key={attraction} style={styles.attraction}>
-                📌 {attraction}
-              </Text>
-            ))}
+            {selectedPlace.attractions.map((attraction) => {
+              // works with both "Baga Beach" and { name, image }
+              const attractionName =
+                typeof attraction === 'string' ? attraction : attraction.name;
+              const attractionImage =
+                typeof attraction === 'string' ? null : attraction.image;
+
+              return (
+                <View key={attractionName} style={styles.attractionCard}>
+                  {attractionImage ? (
+                    <Image
+                      source={{ uri: attractionImage }}
+                      style={styles.attractionImage}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View style={styles.attractionPlaceholder}>
+                      <Text style={styles.attractionPlaceholderText}>📌</Text>
+                    </View>
+                  )}
+                  <Text style={styles.attractionName}>{attractionName}</Text>
+                </View>
+              );
+            })}
 
             <Text style={styles.sectionTitle}>Best Time to Visit</Text>
 
@@ -274,6 +293,65 @@ export default function App() {
                 🗺️ View on Map
               </Text>
             </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </View>
+    );
+  }
+
+  // Wishlist Screen
+  if (showWishlist) {
+    const wishlistPlaces = places.filter((place) =>
+      favorites.includes(place.name)
+    );
+
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#0F766E" />
+
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => setShowWishlist(false)}
+        >
+          <Text style={styles.backText}>← Back to destinations</Text>
+        </TouchableOpacity>
+
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.detailContent}>
+            <Text style={styles.detailTitle}>❤️ My Wishlist</Text>
+
+            {wishlistPlaces.length === 0 ? (
+              <Text style={styles.detailDescription}>
+                Your wishlist is empty. Tap the heart on a destination to save it!
+              </Text>
+            ) : (
+              wishlistPlaces.map((place) => (
+                <TouchableOpacity
+                  key={place.name}
+                  style={styles.wishlistCard}
+                  activeOpacity={0.85}
+                  onPress={() => setSelectedPlace(place)}
+                >
+                  <Image
+                    source={{ uri: place.image }}
+                    style={styles.wishlistImage}
+                    resizeMode="cover"
+                  />
+                  <View style={styles.wishlistInfo}>
+                    <Text style={styles.name}>{place.name}</Text>
+                    <Text style={styles.location}>📍 {place.location}</Text>
+                    <TouchableOpacity
+                      style={styles.wishlistRemoveButton}
+                      onPress={() => toggleFavorite(place.name)}
+                    >
+                      <Text style={styles.wishlistRemoveText}>
+                        💔 Remove
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                </TouchableOpacity>
+              ))
+            )}
           </View>
         </ScrollView>
       </View>
@@ -451,12 +529,11 @@ export default function App() {
   <TouchableOpacity
     style={[
       styles.wishlistButton,
-      showFavorites && styles.wishlistActive,
     ]}
-    onPress={() => setShowFavorites(!showFavorites)}
+    onPress={() => setShowWishlist(true)}
   >
     <Text style={styles.wishlistText}>
-      {showFavorites ? '❤️ Showing Favourites' : '♡ View Favourites'}
+      {`❤️ My Wishlist (${favorites.length})`}
     </Text>
   </TouchableOpacity>
 
@@ -545,4 +622,3 @@ export default function App() {
     </View>
   );
 }
-
