@@ -71,12 +71,13 @@ TravelExplorer/
 
 ## Screenshots
 
-Homescreen
-![alt text](Home_screen.png)
-Destination card
-![alt text](destination_card.png)
-Trip Planner
-![alt text](Trip_planner.png)
+<table>
+  <tr>
+    <td align="center"><img src="assets/screenshots/Home_screen.png" width="220" alt="Home screen"/><br/><b>Home Screen</b></td>
+    <td align="center"><img src="assets/screenshots/destination_card.png" width="220" alt="Destination details"/><br/><b>Destination Details</b></td>
+    <td align="center"><img src="assets/screenshots/Trip_planner.png" width="220" alt="Trip planner"/><br/><b>Trip Planner</b></td>
+  </tr>
+</table>
 
 ## Future Improvements
 
