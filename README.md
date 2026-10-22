@@ -29,7 +29,7 @@ A React Native mobile app, built with Expo, that helps users discover travel des
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (LTS version) (preferably version 57)
+- [Node.js](https://nodejs.org/) (LTS version) 
 - The **Expo Go** app on your Android or iOS phone
 
 ### Installation
@@ -37,7 +37,7 @@ A React Native mobile app, built with Expo, that helps users discover travel des
 ```bash
 # 1. Clone the repository
 git clone https://github.com/anji1553-lgtm/Travel-Explorer
-cd TravelExplorer
+cd Travel-Explorer
 
 # 2. Install dependencies
 npm install
@@ -89,7 +89,7 @@ TravelExplorer/
 
 ## Author
 
-**Anji
+**Anji**
 
 ## License
 
