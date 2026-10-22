@@ -36,7 +36,7 @@ A React Native mobile app, built with Expo, that helps users discover travel des
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone <https://github.com/anji1553-lgtm/Travel-Explorer>
 cd TravelExplorer
 
 # 2. Install dependencies
@@ -84,7 +84,7 @@ TravelExplorer/
 - Split `App.js` into separate screens and reusable components
 - Add more destinations and photos
 - Add React Navigation for smoother screen transitions
-- Add a "Clear all filters" button
+
 - Add a dark mode
 
 ## Author
